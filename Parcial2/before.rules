@@ -16,7 +16,8 @@
 -A PREROUTING -p tcp --dport 21 -j DNAT --to-destination 192.168.50.2:21
 
 # Don't masquered local traffic.
--A POSTROUTING -s 192.168.50.0/24 -j MASQUERADE
+-A POSTROUTING -s 192.168.50.0/24 -j MASQUERADE 
+-A POSTROUTING -s 192.168.10.0/24 -o eth1 -j MASQUERADE
 
 
 
